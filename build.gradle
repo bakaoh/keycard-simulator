@@ -1,0 +1,29 @@
+group 'com.bakaoh.smartcard'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.7
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile files('jcardsim/jcardsim-3.0.5-SNAPSHOT.jar')
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs 'src/main'
+            srcDirs 'status-keycard/src/main'
+        }
+    }
+}
+
+task run(type: JavaExec) {
+    classpath sourceSets.main.runtimeClasspath
+    main = "com.bakaoh.smartcard.simulator.Main"
+    jvmArgs '-noverify'
+}

@@ -1,0 +1,6 @@
+[submodule "status-keycard"]
+	path = status-keycard
+	url = https://github.com/status-im/status-keycard
+[submodule "jcardsim"]
+	path = jcardsim
+	url = https://github.com/status-im/jcardsim
